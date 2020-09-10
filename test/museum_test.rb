@@ -148,7 +148,7 @@ class MuseumTest < Minitest::Test
 
     dmns.stubs(:rand).returns(patron_3)
 
-    assert_equal patron_3, dmns.draw_lotter_winner(dead_sea_scrolls)
-    assert_equal nil, dmns.draw_lotter_winner(gems_and_minerals)
+    assert_equal patron_3, dmns.draw_lottery_winner(dead_sea_scrolls)
+    assert_equal nil, dmns.draw_lottery_winner(gems_and_minerals)
   end
 end

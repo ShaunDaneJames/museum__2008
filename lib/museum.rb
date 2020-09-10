@@ -46,7 +46,7 @@ class Museum
     end
   end
 
-  def draw_lotter_winner(exhibit)
+  def draw_lottery_winner(exhibit)
     rand(ticket_lottery_contestants(exhibit))
   end
 end

@@ -13,9 +13,6 @@ class Museum
     @exhibits << exhibit
   end
 
-  def patron_intrests_one_at_a_time
-  end
-
   def recommend_exhibits(patron)
     recommendations = []
     @exhibits.find_all do |exhibit|
@@ -46,6 +43,10 @@ class Museum
   def ticket_lottery_contestants(exhibit)
     @patrons.find_all do |patron|
       patron.spending_money < exhibit.cost
-    end 
+    end
+  end
+
+  def draw_lotter_winner(exhibit)
+    ticket_lottery_contestants(exhibit).sample
   end
 end

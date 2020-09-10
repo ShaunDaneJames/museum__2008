@@ -27,6 +27,23 @@ class Museum
   end
 
   def admit(patron)
-    @patrons << patron 
+    @patrons << patron
+  end
+
+  def patrons_by_exhibit_interest
+    patrons_by_exhibit_interest = Hash.new { |h, k| h[k] = []}
+    @exhibits.each do |exhibit|
+      patrons_by_exhibit_interest[exhibit]
+      @patrons.each do |patron|
+        if recommend_exhibits(patron).include?(exhibit)
+          patrons_by_exhibit_interest[exhibit] << patron
+        end
+      end
+  end
+    patrons_by_exhibit_interest
+  end
+  
+  def ticket_lottery_contestants(exhibit)
+
   end
 end
